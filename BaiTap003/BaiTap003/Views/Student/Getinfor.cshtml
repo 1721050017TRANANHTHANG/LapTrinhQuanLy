@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Getinfor";
+    Layout = "~/Views/Student/Getinfor.cshtml";
+}
+
+<h2>Getinfor</h2>
+@using (Html.BeginForm())
+{
+    <input type="text" name="Ten" />
+    <input type="text" name="Tuoi" />
+    <input type="text" name="Lop" />
+    <input type="submit" value="Hiển thị thông tin" />
+}
+<h3> Thông tin Sinh vien </h3>
+<mark>
+    <q>Tên : @ViewBag.Ten</q>
+    <q>Tuổi : @ViewBag.Tuoi</q>
+    <q>lớp : @ViewBag.Lop</q>
+</mark>

@@ -15,11 +15,11 @@ namespace BaiTap003.Controllers
         {
             return View();
         }
-        public ActionResult GetinfoSV()
+        public ActionResult Getinfor()
         {
             return View();
         }
-        public ActionResult GetinfoSV( string Ten, string Lop,int Tuoi)
+        public ActionResult Getinfor( string Ten, string Lop,int Tuoi)
         {
             ViewBag.Ten = Ten;
             ViewBag.Tuoi = Tuoi;
