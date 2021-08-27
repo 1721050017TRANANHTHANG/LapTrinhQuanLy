@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BaiTap003.Models
+namespace BaiTap003.Controllers
 {
     public class StudentController : Controller
     {
@@ -13,5 +13,6 @@ namespace BaiTap003.Models
         {
             return View();
         }
+
     }
 }
