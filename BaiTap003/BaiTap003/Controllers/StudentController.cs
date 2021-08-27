@@ -8,15 +8,25 @@ namespace BaiTap003.Controllers
 {
     public class StudentController : Controller
     {
-        public int StudentId { get; set; }
-        public string StudentName { get; set; }
-        public int Age { get; set; }
+       
 
-        // GET: Student
+      
         public ActionResult Index()
         {
             return View();
         }
-       
+        public ActionResult GetinfoSV()
+        {
+            return View();
+        }
+        public ActionResult GetinfoSV( string Ten, string Lop,int Tuoi)
+        {
+            ViewBag.Ten = Ten;
+            ViewBag.Tuoi = Tuoi;
+            ViewBag.Lop = Lop;
+            return View();
+        }
+
+
     }
 }
