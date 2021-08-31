@@ -7,15 +7,11 @@ namespace BaiTap004.Models
 {
     public class GiaiPhuongTrinh
     {
-        public double SoA(get; set;)
-        public double SoB(get; set;)
-            public double GiaiPhuongTrinh(double SoA, double SoB)
+        public double GiaiPTBac1(double a, double b)
         {
-            double x = 0;
-            x = -SoB / SoA;
+            double x;
+            x = -b / a;
             return x;
         }
-
-
     }
 }
