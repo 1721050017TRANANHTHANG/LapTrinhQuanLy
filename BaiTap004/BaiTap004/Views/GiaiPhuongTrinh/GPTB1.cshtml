@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "GPTB1";
+    Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h2>GPTB1</h2>
+@using (Html.BeginForm("GPTB1", "GiaiPhuongTrinh"))
+{
+    <input type="text" name="soThuNhat" />
+    <input type="text" name="soThuHai" />
+    <button type="submit">Nghiệm phương trình là </button>
+}
+
