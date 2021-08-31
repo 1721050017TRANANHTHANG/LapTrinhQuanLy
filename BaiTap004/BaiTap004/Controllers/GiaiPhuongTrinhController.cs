@@ -15,15 +15,14 @@ namespace BaiTap004.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index ( string soThuNhat , string soThuHai)
+        public ActionResult GPTB1(string SoA, string SoB)
         {
-            gpt.SoA = convert.ToInt32(soThuNhat);
-            gpt.SoB = convert.ToInt32(soThuHai);
-            ViewBag.x = gpt.x(gpt.SoA, gpt.SoB);
+            double a = double.Parse(SoA);
+            double b = double.Parse(SoB);
+            double x = gpt.GiaiPTBac1(a, b);
+            ViewBag.NghiemPT = x;
             return View();
-
         }
-
 
     }
 }
