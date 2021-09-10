@@ -26,5 +26,7 @@ namespace KetNoi.Models
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
+
+        public System.Data.Entity.DbSet<KetNoi.Models.Person> People { get; set; }
     }
 }
