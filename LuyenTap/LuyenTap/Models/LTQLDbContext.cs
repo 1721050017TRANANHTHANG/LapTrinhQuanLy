@@ -13,22 +13,20 @@ namespace LuyenTap.Models
         }
 
        
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
-
+        
+        public virtual DbSet<Employee> Employee { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<KhachHang>()
-                .Property(e => e.SoDienThoai)
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.PersonID)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<KhachHang>()
-                .Property(e => e.MaKhachHang)
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.PersonName)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<KhachHang>()
-                .Property(e => e.TenKhachHang)
-                .IsUnicode(false);
+            
         }
     }
 }
