@@ -138,6 +138,7 @@
       <DependentUpon>202109140645016_create_table_employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AutoGenerateKey.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
     <Compile Include="Models\Person.cs" />
