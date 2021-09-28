@@ -28,5 +28,7 @@ namespace LuyenTap.Models
 
             
         }
+
+        public System.Data.Entity.DbSet<LuyenTap.Models.Person> People { get; set; }
     }
 }

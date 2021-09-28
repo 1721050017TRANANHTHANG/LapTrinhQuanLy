@@ -13,13 +13,12 @@ namespace LuyenTap.Controllers
     public class EmployeesController : Controller
     {
         private LTQLDbContext db = new LTQLDbContext();
-        AutoGenerateKey aukey = new AutoGenerateKey();
+        
         // GET: Employees
         public ActionResult Index()
         {
             var perID = db.Employee.OrderByDescending(m => m.PersonID).FirstOrDefault().PersonID;
-            var newID = aukey.GenerateKey(perID);
-            ViewBag.newPerID = newID;    
+               
             return View(db.Employee.ToList());
         }
 
