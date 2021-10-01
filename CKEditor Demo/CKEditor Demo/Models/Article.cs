@@ -11,11 +11,15 @@ namespace CKEditor_Demo.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     public partial class Article
     {
+        [Required(ErrorMessage = "User name is required.")]
         public string ArticleID { get; set; }
+        [Required(ErrorMessage = "Password is required.")]
+        [DataType(DataType.Password)]
         public string Author { get; set; }
         [AllowHtml]
         public string ArticleContent { get; set; }
