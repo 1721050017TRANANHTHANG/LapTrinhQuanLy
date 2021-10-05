@@ -46,11 +46,11 @@ namespace CKEditor_Demo.Controllers
             if (ModelState .IsValid)
             {
                 string encrytionpass = encry.PasswordEncrytion(acc.Password);
-                var model = db.Accounts.Where(m => m.UserName == acc.UserName && m.Password == encrytionpass).ToList().Count();
+                var model = db.Accounts.Where(m => m.UserName == acc.Usename && m.Password == encrytionpass).ToList().Count();
                 // Thông tin đăng nhập chính xác
                 if (model == 1)
                 {
-                    FormsAuthentication.SetAuthCookie(acc.UserName, true);
+                    FormsAuthentication.SetAuthCookie(acc.Usename, true);
                     return RedirectToAction("Index", "Home");
                 }   
                 else
