@@ -177,6 +177,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NhanSu\Index.cshtml" />
     <Content Include="Views\NhanSu\Create.cshtml" />
+    <Content Include="Views\NhanSu\Edit.cshtml" />
+    <Content Include="Views\NhanSu\Delete.cshtml" />
+    <Content Include="Views\NhanSu\Permission.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

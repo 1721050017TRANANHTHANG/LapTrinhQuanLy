@@ -17,14 +17,39 @@ namespace QLNhanSu.Controllers
         }
 
         // GET: NhanSu/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Permission(int id)
         {
-            return View();
+            var context = new DBNhanSuContext();
+            var editing = context.NhanViens.Find(id);
+            return View(editing);
         }
-
+        // POST: NhanSu/Edit/5
+        [HttpPost]
+        public ActionResult Permission(NhanVien model)
+        {
+            try
+            {
+                // TODO: Add update Permission logic here
+                var context = new DBNhanSuContext();
+                var oldItem = context.NhanViens.Find(model.ld);
+                oldItem.MatKhau = model.MatKhau;
+                oldItem.LaQuanTri = model.LaQuanTri;
+                oldItem.LaChuyenVien = model.LaChuyenVien;
+                oldItem.LaNhanVien = model.LaNhanVien;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
         // GET: NhanSu/Create
         public ActionResult Create()
         {
+            var context = new DBNhanSuContext();
+            var chucVuSelect = new SelectList(context.ChucVus, "Id", "TenChucVu");
+            ViewBag.IdChucVu = chucVuSelect;
             return View();
         }
 
@@ -49,17 +74,29 @@ namespace QLNhanSu.Controllers
         // GET: NhanSu/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var context = new DBNhanSuContext();
+            var editing = context.NhanViens.Find(id);
+            var chucVuSelect = new SelectList(context.ChucVus, "Id", "TenChucVu",editing.IdChucVu);
+            ViewBag.IdChucVu = chucVuSelect;
+            return View(editing);
         }
 
         // POST: NhanSu/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(NhanVien model)
         {
             try
             {
                 // TODO: Add update logic here
-
+                var context = new DBNhanSuContext();
+                var oldItem = context.NhanViens.Find(model.ld);
+                oldItem.HoVaTen = model.HoVaTen;
+                oldItem.GioiTinh = model.GioiTinh;
+                oldItem.Email = model.Email;
+                oldItem.IdChucVu = model.IdChucVu;
+                oldItem.SoCanCuoc = model.SoCanCuoc;
+                oldItem.SoDienThoai = model.SoDienThoai;
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -71,7 +108,9 @@ namespace QLNhanSu.Controllers
         // GET: NhanSu/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var context = new DBNhanSuContext();
+            var deleting = context.NhanViens.Find(id);
+            return View(deleting);
         }
 
         // POST: NhanSu/Delete/5
@@ -81,7 +120,10 @@ namespace QLNhanSu.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                var context = new DBNhanSuContext();
+                var deleting = context.NhanViens.Find(id);
+                context.NhanViens.Remove(deleting);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
